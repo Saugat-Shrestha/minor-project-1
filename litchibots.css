@@ -1,0 +1,309 @@
+
+
+:root{
+    --orange:#b91646;
+}
+
+*{
+    font-family: 'poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: 0.2s linear;
+
+}
+
+*::selection{
+    background:var(--orange);
+    color:#fff;
+}
+
+html{
+    font-size:62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+}
+
+.heading{
+    text-align: center;
+    padding:2.5rem 0;
+}
+
+.heading span{
+   font-size: 3.5rem;
+   background:rgba(255, 155, 0, .2);
+   color:var(--orange);
+   border-radius: .5rem;
+   padding: .2rem 1rem;
+}
+.heading span.space{
+    background:none;
+}
+
+.myDropDown
+{
+   height: 50px;
+   overflow: auto;
+}
+select {
+    height:50px;
+    overflow-y: scroll;
+    }
+
+.btn{
+    display: inline-block;
+    margin-top:1rem;
+    background:var(--orange);
+    color:#fff;
+    padding:.8rem 3rem;
+    border: .2rem solid var(--orange);
+    cursor:pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover{
+    background: rgba(255,165,0,.2);
+    color:var(--orange);
+}
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    background:#b91646;
+    z-index: 1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding: 2rem 9%;
+}
+
+
+
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: relative;
+    z-index: 0;
+}
+
+.container{
+    background: #f0f2f5;
+    padding-top: 72px;
+    padding-bottom: 112px;
+    padding-left: 475px;
+}
+
+.content{
+    width: 980px;
+    margin: 20px auto;
+}
+
+.content > div{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.left-content{
+    width: 580px;
+    padding-left: 0px;
+    padding-right: 12px;
+    box-sizing: border-box;
+}
+.f-logo{
+    font-family: 'poppins', sans-serif;
+    margin: 50px 0 16px;
+    background: #fff;
+    width: 550px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 0.3%);
+    padding: 10px 15px;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+.f-logo  img{
+    height: 300px;
+    width: 485px;
+    margin: 112px 0 16px;
+    margin-top: 20px;
+    padding: 10px 5px;
+}
+
+h1{
+    padding: 25px;
+    align-items: center;
+}
+
+
+.card{
+    background: #fff;
+    width: 396px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    padding: 10px 15px;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+table{
+    font-family: 'poppins', sans-serif;
+    font-size: 15px;
+    padding: 0 25px 25px;
+ 
+}
+
+.bd{
+    padding-left: 25px ;
+}
+
+.th{
+    padding: 0px 0px 2px 8px;
+    color: rgb(0 0 0 / 40%);
+}
+
+
+.packages .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:2rem;
+}
+
+.packages .box-container .box{
+    flex: 1 1 30rem;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+}
+
+.packages .box-container .box img{
+    height:200px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.packages .box-container .box .content{
+    padding:2rem;
+}
+
+.packages .box-container .box .content h3{
+    font-size:2rem;
+    color: #333;
+}
+
+.packages .box-container .box .content h3 i{
+    color: var(--orange);
+}
+
+.packages .box-container .box .content p{
+    font-size:1.7rem;
+    color: #666;
+   
+}
+
+.packages .box-container .box .content .stars i{
+    font-size:1.7rem;
+    color: var(--orange);
+}
+ .price{
+  
+    color: rgb(0 0 0 / 40%);
+    padding: 1rem;
+}
+
+.price span{
+    color: rgb(0 0 0 / 30%);
+  
+    text-decoration: line-through;
+}
+
+
+/* booking */
+.book .row{
+    display:flex;
+    flex-wrap: wrap;
+    gap:1.5rem;
+    align-items: center;
+    font-size: 25px;
+}
+
+.book .row form{
+    flex: 1 1 40rem;
+    padding:2rem;
+    box-shadow:0 1rem 2rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+
+.book .row form .inputBox{
+    padding:.5rem 0;
+
+}
+
+.book .row form .inputBox input{
+    width: 100%;
+    padding:1rem;
+    border:.1rem solid rgba(0,0,0,.1);
+    font-size:1.7rem;
+    color:#333;
+    text-transform: none;
+}
+
+.book .row form .inputBox h3{
+    font-size: 2rem;
+    padding:1rem 0;
+    color:#666;
+
+}
+
+
+  /*responsive */
+@media (max-width: 980px){
+
+    .container{
+        padding-top: 150px;
+        padding-bottom: 20px;
+        background: #fff;
+        padding-left: 15px;
+    }
+    .content{
+        width: 100%;
+        margin: 0 auto;
+    }
+    .left-content{
+        width: 100%;
+    }
+    .right-content{
+        width: 100%;
+    }
+
+
+    .f-logo{
+        margin: 0 auto; 
+        text-align: center;
+    }
+    .f-logo > img{
+        height: 250px;
+        margin: 150px 50px auto;
+        display: inline-block;
+    }
+
+    .card{
+        width: 100%;
+        box-shadow: none;
+
+    }
+
+    .fix-m-header{
+        display: block;
+    }
+
+    
+}

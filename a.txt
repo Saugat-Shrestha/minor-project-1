@@ -1,0 +1,177 @@
+
+        <div class="box">
+            <img src="litchi1.jpg" alt="">
+            <div class="content">
+                <h3>Litchibot Party Palace</h3>
+                <br>
+                <p><i class="fas fa-map-marker-alt"></i> Gairapatan-4, Pokhara</p>
+                <p>Hello people, have you been searching for a event management place OR confused with your parties?</p>
+                <p><i class="fa-solid fa-address-book"></i> +977 9846267924</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+               
+             
+                    <a href="litchibot.html" class="btn">book now</a>
+               
+            </div>
+        </div>
+
+        
+
+        
+
+        <div class="box">
+            <img src="durbarthok1.jpg" alt="">
+            <div class="content">
+                <h3>Durbarthok Banquet</h3>
+                <br>
+                <p><i class="fas fa-map-marker-alt"></i> Newroad, Pokhara </p>
+                <p>venue suitable for many events, ceremony,seminar, general meetings , Product lunching Fashion show and parties</p>
+                <p><i class="fa-solid fa-address-book"></i> +977 985-6056567</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+            
+                <a href="durbarthhok.php" class="btn">book now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="rabi1.jpg" alt="">
+            <div class="content">
+                <h3>Rabi Mahal</h3>
+                <br>
+                <p><i class="fas fa-map-marker-alt"></i> Srijana Chowk, Pokhara </p>
+                <p>Rabi Mahal is a place where you can organize business meetings, birthday parties,events and different ceremonies.</p>
+                <p><i class="fa-solid fa-address-book"></i> +977 980-6598001</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+               
+                <a href="rabi.html" class="btn">book now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="white1.jpg" alt="">
+            <div class="content">
+                <h3>White House Party Palace</h3>
+                <br>
+                <p><i class="fas fa-map-marker-alt"></i> Srijana Chowk, Pokhara </p>
+                <p>White House Party Palace is the top listed Party Palace of Nepal with the best hospitality, Services and Decoration.</p>
+                <p><i class="fa-solid fa-address-book"></i> +977 985-6041158</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+           
+                <a href="white.html" class="btn">book now</a>
+            </div>
+        </div>
+
+      
+
+        <div class="box">
+            <img src="ranjit1.jpg" alt="">
+            <div class="content">
+                <h3>Ranjit Event Centre</h3>
+                <br>
+                <p><i class="fas fa-map-marker-alt"></i> Ranipauwa, Pokhara </p>
+                <p>Suitable for Wedding, party , seminar, general meetings , Product lunching Fashion show , Beauty contest.</p>
+                <p><i class="fa-solid fa-address-book"></i> +977 985-6021175</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+        
+                <a href="ranjit.html" class="btn">book now</a>
+            </div>
+        </div>
+    </div>
+    <div class="box">
+            <img src="brown1.jpg" alt="">
+            <div class="content">
+                <h3>Brown Eyes Reception</h3>
+                <br>
+                <p><i class="fas fa-map-marker-alt"></i> Bastola Thar, Pokhara </p>
+                <p>Brown Eyes Reception provide you wide range of service including event management like wedding ceremony.</p>
+                <p><i class="fa-solid fa-address-book"></i> +977 985-7622818</p>
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                </div>
+             
+                <a href="brown.html" class="btn">book now</a>
+            </div>
+        </div>
+
+            
+
+  $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    //database connection
+
+  
+    if($con->connect_error)
+    {
+        die("faild to connect:" .$con->connect_error);
+
+    }
+    else
+    {
+        $stmt = $con->prepare("select * from registration where email = ?");
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $stmt_result = $stmt->get_result();
+
+        if ($stmt_result->num_rows > 0){
+            $data = $stmt_result->fetch_assoc();
+
+            if($data['password'] === $password )
+            {
+                if($data['role'] === 'b')
+                {
+                  header("location: business.php");
+                }
+                else
+                {
+                    header("location: personal.php");
+                }
+            }
+            else
+            {
+                $alert = "<script> alert('user id or password is wrong');</script>";
+                echo $alert;
+                echo"<script>window.location.href='login.php?User_Id_or_Password_is_wrong';</script>";
+            }
+            
+        }
+        else
+        {
+            $alert = "<script> alert('user id or password is wrong');</script>";
+            echo $alert;
+            echo"<script>window.location.href='login.php?user id or password is wrong';</script>";
+        }
